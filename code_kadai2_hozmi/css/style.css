@@ -13,31 +13,31 @@ dt,
 dd,
 ul,
 li {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  /*デフォルトの文字色、font-familyを予め当てておく*/
-  color: #000;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #000;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
 a {
-  /*下線を消す*/
-  text-decoration: none;
-  /*色を消す*/
-  color: inherit;
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
 }
 
 ul {
-  /*左の「・」を消す*/
-  list-style: none;
+    /*左の「・」を消す*/
+    list-style: none;
 }
 
 img {
-  max-width: 100%;
-  vertical-align: bottom;
-  border: none;
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
 }
 
 /* CSSリセットここまで */
@@ -46,16 +46,16 @@ img {
 /* 問題1 */
 
 
-.blue{
+.blue {
     width: 300px;
     height: 300px;
     background-color: blue;
 }
 
-.mondai1{
+.mondai1 {
     display: flex;
     max-width: 960px;
-    margin: 0 auto;
+    margin: 0px auto 10px;
     justify-content: space-between;
 }
 
@@ -63,17 +63,18 @@ img {
 /* 問題2 */
 
 
-.red{
+.red {
     width: 300px;
     height: 300px;
     background-color: red;
+    margin-bottom: 20px;
 }
 
-.mondai2{
+.mondai2 {
     display: flex;
     flex-wrap: wrap;
     max-width: 960px;
-    margin: 0 auto;
+    margin: 0px auto 10px;
     justify-content: space-between;
 }
 
@@ -81,17 +82,13 @@ img {
 /* 問題3 */
 
 
-.mondai3{
+.mondai3 {
     display: flex;
     max-width: 960px;
+    margin: 0 auto;
 }
 
-.mondai3 h1{
- margin: 0 auto;
-}
-
-.nav{
-    width: 50%;
+.nav {
     margin-left: auto;
     display: flex;
     justify-content: space-between;
@@ -101,6 +98,7 @@ img {
 .nav li {
     border-right: 1px solid #313131;
     padding-right: 11px;
+    padding-left: 11px;
 }
 
 .nav li:last-child {
@@ -116,17 +114,17 @@ img {
 
 @media screen and (max-width:767px) {
 
-    .mondai3{
+    .mondai3 {
         display: block;
         margin-left: 15px;
         margin-right: 15px;
     }
-    
-    .nav{ 
+
+    .nav {
         display: block;
-        margin: 0 ;
+        margin: 0;
     }
-    
+
     .nav li {
         border-right: 0px;
         border-bottom: 1px solid #313131;
