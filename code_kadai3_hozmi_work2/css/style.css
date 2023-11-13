@@ -45,33 +45,34 @@ img {
 /* work2PC */
 
 body {
-    max-width: 960px;
     background-color: #eeeeee;
+}
+
+.service {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 h1 {
     color: green;
-    display: flex;
     margin: 30px auto;
-    justify-content: center;
+    text-align: center;
+
+    /* 下記セットでも表示は変わらないが、text-align: center;で、テキストの位置を中心に設定するほうが綺麗 */
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
-
-#cards {
+.cards {
     display: flex;
     margin: 0px auto;
-    justify-content: center;
-
+    justify-content: space-between;
 }
 
 .card {
-    width: 264px;
-    height: 176px;
-}
-
-.card:nth-child(2) {
-    margin-right: 15px;
-    margin-left: 15px;
+    /* 横幅は％、高さは指定しないがセオリーである */
+    width: 32%;
+    background-color: white;
 }
 
 .picture img {
@@ -82,12 +83,11 @@ h1 {
 h2 {
     color: green;
     border-left: solid green 8px;
+    padding-left: 5px;
 }
 
-.description {
+.desc {
     width: 100%;
-    height: 100px;
-    background-color: white;
     padding: 12px 10px;
     box-sizing: border-box;
 }
@@ -95,7 +95,7 @@ h2 {
 .description p {
     font-size: 16px;
     color: #313131;
-    padding: 10px 0px;
+    padding: 10px 0px 0px;
 }
 
 /* ここから下はスマホ用 */
@@ -104,34 +104,17 @@ h2 {
 
 @media screen and (max-width:400px) {
 
-
-    h1 {
-        color: green;
-        display: flex;
-        margin: 30px auto;
-        justify-content: center;
-    }
-
-
-    #cards {
+    .cards {
         display: block;
     }
 
     .card {
-        width: 300px;
-        height: 315px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .card:nth-child(2) {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .picture img {
         width: 100%;
-        height: 220px;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
     }
 
 }
