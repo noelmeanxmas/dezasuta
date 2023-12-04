@@ -19,6 +19,11 @@ li {
     /*デフォルトの文字色、font-familyを予め当てておく*/
     color: #4f260b;
     font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    font-feature-settings: "palt";
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 a {
@@ -82,40 +87,44 @@ img {
 /* ヘッダーここまで */
 
 
-/* ここからメイン */
+/* メイン */
 
 .main {
     background-color: #e8d9bf;
 }
 
-/* ここからはステートメント */
+/* lead */
 
-.statement {
+.lead {
     padding: 100px 0px 0px 0px;
     text-align: center;
     margin: 0 auto;
 }
 
-.statement_eigo {
+.lead_eigo {
     margin-bottom: 50px;
     font-size: 30px;
 }
 
-.statement_main {
+.lead_main {
     margin-bottom: 30px;
     font-size: 82px;
     line-height: 1.17;
     letter-spacing: 0.1em;
 }
 
-.statement_desc {
+.lead_desc {
     font-size: 23px;
     line-height: 1.65;
     letter-spacing: 0.1em;
 }
 
+.sp_only {
+    display: none;
+}
 
-/* ここからはaboutus */
+
+/* aboutus */
 
 .aboutus {
     display: flex;
@@ -128,6 +137,10 @@ img {
     width: 50%;
 }
 
+.aboutus_img_sp {
+    display: none;
+}
+
 .aboutus_text {
     width: 41%;
     padding-right: 10px;
@@ -136,7 +149,7 @@ img {
 
 .aboutus_text h2 {
     width: 272px;
-    margin: 0 auto 45px 0;
+    margin: 0 auto 40px 0;
     padding-top: 56px;
 }
 
@@ -152,7 +165,7 @@ img {
 }
 
 
-/* ここからはmenu */
+/* menu */
 
 .menu {
     max-width: 1000px;
@@ -184,6 +197,7 @@ img {
     padding-left: 12px;
     font-size: 38px;
     color: #d30202;
+    font-weight: normal;
 }
 
 .menu_nakami p {
@@ -193,7 +207,7 @@ img {
 }
 
 
-/* ここからはgallery */
+/* gallery */
 .gallery {
     padding-top: 89px;
 }
@@ -203,14 +217,13 @@ img {
     margin: 0 auto;
 }
 
-.gallery_nakami {
+.gallery_cont {
     padding-top: 26px;
     display: flex;
-    width: 20%;
 }
 
 
-/* ここからはevent */
+/* event */
 
 .event {
     max-width: 1000px;
@@ -222,10 +235,10 @@ img {
 
 .event h2 {
     width: 173px;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
 }
 
-.eventnohako {
+.event_box {
     border: 3px solid #4f260b;
     background-color: white;
     display: flex;
@@ -233,16 +246,25 @@ img {
     padding: 36px;
 }
 
-.eventnohako ul {
+.event_box ul {
     font-size: 23px;
 }
 
-.eventnohako ul li time {
-    margin-left: 50px;
+.event_box ul li time {
+    margin-right: 50px;
+}
+
+.event_box ul li time a {
+    text-decoration: underline;
 }
 
 
-/* ここからaccess */
+.eventlist .item+.item {
+    margin-top: 20px;
+}
+
+
+/* access */
 .access {
     padding-top: 80px;
 }
@@ -262,7 +284,7 @@ img {
 /* ここまでメイン */
 
 
-/* ここからフッター */
+/* フッター */
 
 footer {
     padding: 75px 0;
@@ -286,7 +308,7 @@ footer {
     line-height: 1.95;
 }
 
-.copy p {
+.copy {
     text-align: center;
     font-size: 16px;
     color: #000;
@@ -298,4 +320,198 @@ footer {
     position: fixed;
     right: 40px;
     bottom: 40px;
+}
+
+/* PC版ではスマホメニューを非表示にするためのもの */
+.sp_btn,
+.sp_nav {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .pc_nav {
+        display: none;
+    }
+
+    /* ハンバーガー */
+
+    .sp_btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .sp_btn span {
+        position: relative;
+        top: 10px;
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* ハンバーガー閉じる */
+
+    .sp_btn.open span {
+        background: transparent;
+    }
+
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    /* ハンバーガーメニュー */
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+    }
+
+    .sp_nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .sp_nav ul li {
+        padding: 20px;
+        color: #fff;
+        font-size: 18px;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+            "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    }
+
+    /* lead */
+
+    .lead_main {
+        font-size: 38px;
+    }
+
+    .lead_desc {
+        font-size: 19px;
+    }
+
+    /* aboutus */
+
+    .midashi {
+        font-size: 36px;
+    }
+
+    .midashi_desc {
+        font-size: 16px;
+    }
+}
+
+/* sp */
+
+@media screen and (max-width: 767px) {
+
+    /* lead */
+
+    .lead {
+        padding: 41px 0px 0px 0px;
+    }
+
+    .lead_eigo {
+        margin-bottom: 23px;
+        font-size: 17px;
+    }
+
+    .lead_main {
+        margin-bottom: 13px;
+        font-size: 38px;
+        letter-spacing: 0;
+    }
+
+    .lead_desc {
+        font-size: 16px;
+    }
+
+    .sp_only {
+        display: block;
+    }
+
+    /* about us */
+
+    /* 質問です。aboutusのsp版を作成し始めたあたりから、なぜか要素が背景をはみ出しています。 色々試しましたが、原因が分からないため、一旦断念します。このまま取り返しのつかないミスをし続けるのも怖いので、、、*/
+
+    .aboutus {
+        display: block;
+        max-width: 766px;
+        margin: 0 auto 0 0;
+    }
+
+    .aboutus_img {
+        display: none;
+    }
+
+    .aboutus_img_sp {
+        display: block;
+        max-width: 100%;
+        padding-bottom: 35px;
+    }
+
+    .aboutus_text {
+        display: block;
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .aboutus_text h2 {
+        width: 160px;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    .midashi {
+        font-size: 36px;
+        padding: 0 0 0 20px;
+    }
+
+    .aboutus_text {
+        display: block;
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
 }
