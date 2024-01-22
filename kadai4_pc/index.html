@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第4回課題</title>
     <meta name="description" content="第4回の課題です">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- cdnの読み込み　ここから -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- cdnの読み込み　ここまで -->
 </head>
 
 <body>
 
     <header id="header">
+
         <div class="header_slider">
             <div><img src="images/pc_first-100.jpg" alt="店内の様子"></div>
+            <div><img src="images/slider_2.jpg" alt="店内の様子"></div>
         </div>
+
         <div class="header_wrap">
             <h1 class="header_logo"> <img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"> </h1>
 
@@ -151,8 +158,8 @@
             </h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.017120618368!2d139.75832451133442!3d35.67658043011521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf05c667003%3A0xa9bb20a42d9578cc!2z5bid5Zu95YqH5aC0!5e0!3m2!1sja!2sjp!4v1700840700493!5m2!1sja!2sjp"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
 
         </section>
     </main>
@@ -188,7 +195,19 @@
                 $('.sp_nav').fadeToggle();
                 $('.sp_btn').toggleClass('open')
             });
+
+            $('.header_slider').slick({
+                autoplay: true,
+                // 2秒かけてスライドするよ
+                autoplaySpeed: 2000,
+                dots: true,
+                aroows: false,
+            });
+            //arrows: false,しても分かりやすく空白が残ったままなんだ、、
         });
+
+
+
     </script>
 
     <!-- ハンバーガーメニュー用のjQueryここまで -->

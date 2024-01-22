@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* fv */
+
+.fv p {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+}
+
+/* fvここまで */
+
+
+/* ここからABOUT */
+
+.about_cont {
+    position: static;
+    display: flex;
+    margin: 0px 200px 80px;
+}
+
+.about_cont p {
+    width: 50%;
+    padding: 50px 0px 50px 20px;
+}
+
+/* ここまでABOUT */
+
+/* ここからSKILL */
+/* 
+（制作日報その１　2024.1.23）
+/
+残り
+・topのギャラリーで、作品例スライドが流れていく方法を探す
+・作品の一覧ページは良い感じ(なはず)なので、次の層の詳細ページを作成する
+・サンクスページの実装
+・sp版
+
+質問と報告
+・フォントの反映ができない状態です、、お助けください
+    アドビフォントで、web用書き出しをしたところ、
+    <link rel="stylesheet" href="https://use.typekit.net/cjl1nry.css">
+    しか出てきませんでした。ネットを参考にフォント指定を作ってみましたが上手く行かず、、、
+    お助けください、、、
+・なぜfvの画像終わりに白い空白部分が出来てしまっているのか、、、
+    検討がつかずです、、教えてください
+・position:relativeが効かない問題が起こりましたが、解決
+    なぜかgarrely一覧ページを作っているときにposition: static;を思いついて、
+    トップページのcssにて、fvが終わってすぐaboutでposition: static;を使って解除できたのでなんとかできました！！奇跡
+・ただし、position:relative問題が起きた時、別作業に逃げたため、skill以降のcss未着手、
+    ここで止まるとまた足が遠のくと思い、Googleフォームの実装と下層ページの作成に移ったため、、一番大変そうなトップページのギャラリーが残ってます、
+    ギャラリー、スライドを良い感じに流す方法が分からないので、きっとここで絶望するはず、、、
+・skillの大体の場所の調整は後程行います
+・提出ボタンを押して、どうやってサンクスページに飛ばすのかが分かりません、、、、
+*/
+
+
+.skill {
+    position: relative;
+}
+
+.skill h2 {
+    position: absolute;
+    top: 50px;
+    left: 500px;
+}
+
+
+.skill_cont {
+    position: absolute;
+    top: 300px;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 200px;
+}
+
+.tate {
+    display: block;
+    width: 50%;
+    text-align: center;
+    background-color: #fffdf8;
+    border-radius: 40px 40px 40px 40px;
+}
+
+.tate h3 {
+    margin-bottom: 20px;
+}
+
+.tate img {
+    margin-bottom: 20px;
+}
+
+.tate p {
+    margin: 0px 40px 40px 40px;
+}
+
+.tate:last-child {
+    margin-left: 20px;
+}
+
+.skiil img {
+    width: 100%;
+    height: auto;
+}
+
+/* ここまでSKILL */
+
+/* ここからギャラリー */
+
+
+/* ここまでギャラリー */

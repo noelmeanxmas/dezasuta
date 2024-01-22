@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.nav {
+    position: static;
+}
+
+.works_disp h2 {
+    text-align: center;
+    margin: 80px auto 50px;
+}
+
+.works_wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.works_cont {
+    width: 30%;
+    display: block;
+    margin-bottom: 50px;
+}
