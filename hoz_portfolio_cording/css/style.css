@@ -4,8 +4,9 @@
 
 .fv p {
     position: absolute;
-    top: 300px;
-    left: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* fvここまで */
@@ -17,6 +18,10 @@
     position: static;
     display: flex;
     margin: 0px 200px 80px;
+}
+
+.about h2 {
+    font-weight: normal;
 }
 
 .about_cont p {
@@ -56,20 +61,25 @@
 
 
 .skill {
-    position: relative;
+    /* position: relative; */
+    background-image: url(../images/skill_back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 50px;
 }
 
 .skill h2 {
-    position: absolute;
-    top: 50px;
-    left: 500px;
+    font-weight: normal;
 }
 
+.skill h3 {
+    font-weight: normal;
+}
 
 .skill_cont {
-    position: absolute;
+    /* position: absolute;
     top: 300px;
-    left: 50px;
+    left: 50px; */
     display: flex;
     justify-content: center;
     margin: 0px 200px;
@@ -108,5 +118,61 @@
 
 /* ここからギャラリー */
 
+.gallery h2 {
+    font-weight: normal;
+}
+
+.gal_button {
+    text-align: right;
+    margin: 0px 200px 80px;
+}
+
+a.btn--red.btn--cubic {
+    border: 2px solid;
+    padding: 5px 15px;
+}
+
+a.btn--red.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #212121;
+}
+
+a.btn--radius {
+    border-radius: 100vh;
+}
+
+.fa-position-right {
+    position: absolute;
+    top: calc(50% - .5em);
+    right: 1rem;
+}
 
 /* ここまでギャラリー */
+
+/* ここからコンタクト */
+
+.contact {
+    background-image: url(../images/contact_back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 50px;
+    display: block;
+}
+
+.contact_item {
+    display: block;
+    text-align: center;
+}
+
+.contact h2 {
+    font-weight: normal;
+}
+
+/* フッター */
+
+.footer {
+    background-color: #212121;
+    padding: 10px 10px;
+    color: #fffdf8;
+    text-align: center;
+}

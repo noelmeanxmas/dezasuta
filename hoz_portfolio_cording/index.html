@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>トップページ</title>
     <meta name="description" content="hozmiのポートフォリオトップページです">
+    <link rel="stylesheet" href="https://use.typekit.net/cjl1nry.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
     <!-- pcメニュー　済 -->
-    <nav class="nav nav-top">
+    <nav class="nav nav-top nav-thanks">
         <div class="logo">LOGO</div>
         <ul>
             <li><a href="#about">ABOUT</a></li>
@@ -24,8 +29,7 @@
 
     <div class="fv">
         <img src="https://wannafford.sakura.ne.jp/images/fv.jpg">
-        <p>想いをカタチに変える
-        </p>
+        <p>想いをカタチに変える</p>
     </div>
 
     <!-- ここからがメイン -->
@@ -45,7 +49,7 @@
         </section>
 
         <section id="skill" class="skill">
-            <img src="images/skill_back.jpg" alt="スキルの背景">
+            <!-- cssで背景画像指定したからここはいらない<img src="images/skill_back.jpg" alt="スキルの背景"> -->
             <h2>SKILL</h2>
             <div class="skill_cont">
                 <div class="tate">
@@ -68,23 +72,44 @@
 
         <section id="gallery" class="gallery">
             <h2>GALLERY</h2>
-            <img src="images/gallery_testimg.jpg" alt="作品">
-            <img src="images/gallery_testimg.jpg" alt="作品">
-            <a href="./works/index.html">MORE</a>
+
+            <div class="slider">
+                <div class="slider_item"><img src="images/gallery_testimg.jpg" alt="作品"></div>
+                <div class="slider_item"><img src="images/gallery_testimg.jpg" alt="作品"></div>
+            </div>
+
+            <div class="gal_button">
+                <a href="./works/index.html" class="btn btn--red btn--radius btn--cubic">MORE<i
+                        class="fas fa-angle-right fa-position-right"></i>
+                </a>
+            </div>
         </section>
 
         <section id="contact" class="contact">
-            <img src="images/contact_back.jpg" alt="コンタクトの背景">
+            <!-- <img src="images/contact_back.jpg" alt="コンタクトの背景"> -->
             <h2>CONTACT</h2>
             <form
-                action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSc7WLFRCa0AsGgFk6NMvGnADEZKSO5dd8kO6-DlrlViJC4GGA/formResponse">
-                <label for="your-name">お名前</label>
-                <input id="your-name" type="text" name="entry.1765854455" placeholder="川島　太郎">
-                <label for="email">メールアドレス</label>
-                <input id="email" type="text" name="entry.371094645" placeholder="example@mail.co.jp">
-                <label for="msg">お問い合わせ内容</label>
-                <textarea id="msg" name="entry.1759969564" placeholder="お気軽にお問い合わせください。"></textarea>
-                <button type="submit" name="button" value="送信"></button>
+                action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSc7WLFRCa0AsGgFk6NMvGnADEZKSO5dd8kO6-DlrlViJC4GGA/formResponse"
+                method="post" target="hidden_iframe" onsubmit="submitted=true;">
+
+                <div class="contact_item">
+                    <label for="your-name">お名前</label>
+                    <input id="your-name" type="text" name="entry.1765854455" placeholder="川島 太郎">
+                </div>
+
+                <div class="contact_item">
+                    <label for="email">メールアドレス</label>
+                    <input id="email" type="text" name="entry.371094645" placeholder="example@mail.co.jp">
+                </div>
+
+                <div class="contact_item">
+                    <label for="msg">お問い合わせ内容</label>
+                    <textarea id="msg" name="entry.1759969564" placeholder="お気軽にお問い合わせください。"></textarea>
+                </div>
+
+                <div class="contact_item">
+                    <button type="submit" name="button" value="送信"></button>
+                </div>
             </form>
         </section>
 
@@ -95,17 +120,32 @@
     <!-- ここからはフッター -->
 
     <footer class="footer">
-        <div class="logo">LOGO</div>
+        <!-- <div class="logo">LOGO</div>
         <ul class="footer_nav">
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#gallery">GALLERY</a></li>
             <li><a href="#contact">CONTACT</a></li>
-        </ul>
-        <p class="copy">©hozmi design</p>
+        </ul> -->
+        <p class="footer">©hozmi design</p>
     </footer>
 
 
     <script src="js/script.js"></script>
+    <script type="text/javascript">
+        var submitted = false;
+
+        $(function () {
+            $('_slider').slick({
+                slidesToShow: 1,
+                centerMode: true,
+                variableWidth: true
+            });
+        });
+    </script>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+        onload="if(submitted)  {window.location='./thanks/index.html';}">
+    </iframe>
 </body>
 
 </html>
