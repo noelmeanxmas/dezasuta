@@ -176,3 +176,7 @@ a.btn--radius {
     color: #fffdf8;
     text-align: center;
 }
+
+/* ここからスマホ用 */
+
+@media screen and (max-width:400px) {}
