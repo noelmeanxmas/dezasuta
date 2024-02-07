@@ -15,9 +15,28 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
-<body>
-    <!-- pcメニュー　済 -->
-    <nav class="nav nav-top nav-thanks">
+<body class="top">
+    <!-- pcメニュー-->
+    <nav class="nav nav-top">
+
+        <div class="nav_inner">
+            <div class="logo">LOGO</div>
+            <ul>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <!-- スマホ用メニューでボタンを表示するためのもの -->
+    <div class="sp_btn"><span></span></div>
+
+    <!-- spメニュー-->
+    <nav class="sp_nav">
+
         <div class="logo">LOGO</div>
         <ul>
             <li><a href="#about">ABOUT</a></li>
@@ -87,30 +106,35 @@
 
         <section id="contact" class="contact">
             <!-- <img src="images/contact_back.jpg" alt="コンタクトの背景"> -->
-            <h2>CONTACT</h2>
-            <form
-                action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSc7WLFRCa0AsGgFk6NMvGnADEZKSO5dd8kO6-DlrlViJC4GGA/formResponse"
-                method="post" target="hidden_iframe" onsubmit="submitted=true;">
+            <div class="contact_inner">
+                <h2>CONTACT</h2>
+                <form
+                    action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSc7WLFRCa0AsGgFk6NMvGnADEZKSO5dd8kO6-DlrlViJC4GGA/formResponse"
+                    method="post" target="hidden_iframe" onsubmit="submitted=true;">
 
-                <div class="contact_item">
-                    <label for="your-name">お名前</label>
-                    <input id="your-name" type="text" name="entry.1765854455" placeholder="川島 太郎">
-                </div>
+                    <div class="contact_block">
+                        <div class="contact_item">
+                            <label for="your-name">お名前</label>
+                            <input id="your-name" type="text" name="entry.1765854455" placeholder="川島 太郎">
+                        </div>
 
-                <div class="contact_item">
-                    <label for="email">メールアドレス</label>
-                    <input id="email" type="text" name="entry.371094645" placeholder="example@mail.co.jp">
-                </div>
+                        <div class="contact_item">
+                            <label for="email">メールアドレス</label>
+                            <input id="email" type="text" name="entry.371094645" placeholder="example@mail.co.jp">
+                        </div>
 
-                <div class="contact_item">
-                    <label for="msg">お問い合わせ内容</label>
-                    <textarea id="msg" name="entry.1759969564" placeholder="お気軽にお問い合わせください。"></textarea>
-                </div>
+                        <div class="contact_item">
+                            <label for="msg">お問い合わせ内容</label>
+                            <textarea id="msg" name="entry.1759969564" placeholder="お気軽にお問い合わせください。"></textarea>
+                        </div>
 
-                <div class="contact_item">
-                    <button type="submit" name="button" value="送信"></button>
-                </div>
-            </form>
+                        <div class="contact_item">
+                            <button type="submit" name="button" class="submit">送信する</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </section>
 
     </div>
@@ -135,13 +159,29 @@
         var submitted = false;
 
         $(function () {
-            $('_slider').slick({
+            $('.slider').slick({
                 slidesToShow: 1,
                 centerMode: true,
-                variableWidth: true
+                variableWidth: true,
+                arrows: false,
             });
         });
     </script>
+
+    <!-- ハンバーガーメニュー用のjQueryここから -->
+
+    <script>
+        $(function () {
+            //ここの中に記述
+            $('.sp_btn, .sp_nav li').on('click', function () {
+                // ここにクリックした時の挙動を記述
+                $('.sp_nav').fadeToggle();
+                $('.sp_btn').toggleClass('open')
+            });
+        });
+    </script>
+
+    <!-- ハンバーガーメニュー用のjQueryここまで -->
 
     <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
         onload="if(submitted)  {window.location='./thanks/index.html';}">

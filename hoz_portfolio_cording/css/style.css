@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+
+.top .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
 /* fv */
 
 .fv p {
@@ -17,7 +27,9 @@
 .about_cont {
     position: static;
     display: flex;
-    margin: 0px 200px 80px;
+    margin: 0px auto 80px;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .about h2 {
@@ -32,39 +44,13 @@
 /* ここまでABOUT */
 
 /* ここからSKILL */
-/* 
-（制作日報その１　2024.1.23）
-/
-残り
-・topのギャラリーで、作品例スライドが流れていく方法を探す
-・作品の一覧ページは良い感じ(なはず)なので、次の層の詳細ページを作成する
-・サンクスページの実装
-・sp版
-
-質問と報告
-・フォントの反映ができない状態です、、お助けください
-    アドビフォントで、web用書き出しをしたところ、
-    <link rel="stylesheet" href="https://use.typekit.net/cjl1nry.css">
-    しか出てきませんでした。ネットを参考にフォント指定を作ってみましたが上手く行かず、、、
-    お助けください、、、
-・なぜfvの画像終わりに白い空白部分が出来てしまっているのか、、、
-    検討がつかずです、、教えてください
-・position:relativeが効かない問題が起こりましたが、解決
-    なぜかgarrely一覧ページを作っているときにposition: static;を思いついて、
-    トップページのcssにて、fvが終わってすぐaboutでposition: static;を使って解除できたのでなんとかできました！！奇跡
-・ただし、position:relative問題が起きた時、別作業に逃げたため、skill以降のcss未着手、
-    ここで止まるとまた足が遠のくと思い、Googleフォームの実装と下層ページの作成に移ったため、、一番大変そうなトップページのギャラリーが残ってます、
-    ギャラリー、スライドを良い感じに流す方法が分からないので、きっとここで絶望するはず、、、
-・skillの大体の場所の調整は後程行います
-・提出ボタンを押して、どうやってサンクスページに飛ばすのかが分かりません、、、、
-*/
-
 
 .skill {
     /* position: relative; */
     background-image: url(../images/skill_back.jpg);
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover;
+    background-position: center;
     padding-bottom: 50px;
 }
 
@@ -77,12 +63,11 @@
 }
 
 .skill_cont {
-    /* position: absolute;
-    top: 300px;
-    left: 50px; */
     display: flex;
     justify-content: center;
     margin: 0px 200px;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .tate {
@@ -130,11 +115,7 @@
 a.btn--red.btn--cubic {
     border: 2px solid;
     padding: 5px 15px;
-}
-
-a.btn--red.btn--cubic:hover {
-    margin-top: 3px;
-    border-bottom: 2px solid #212121;
+    display: inline-block;
 }
 
 a.btn--radius {
@@ -154,18 +135,63 @@ a.btn--radius {
 .contact {
     background-image: url(../images/contact_back.jpg);
     background-repeat: no-repeat;
-    background-size: 100% auto;
-    padding-bottom: 50px;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
     display: block;
 }
 
+.contact_inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+}
+
+.contact_block {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
 .contact_item {
-    display: block;
-    text-align: center;
+    display: flex;
+    /* display: block;
+    text-align: center; */
+    margin-bottom: 20px;
+}
+
+.contact_item label {
+    min-width: 150px;
+    padding: 13px 0;
+    font-size: 16px;
+}
+
+.contact_item input,
+.contact_item textarea {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background: #e8e8e8;
+}
+
+.contact_item textarea {
+    min-height: 150px;
+}
+
+.contact_item .submit {
+    padding: 10px 0;
+    width: 220px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 99rem;
+    font-size: 16px;
+    background: transparent;
 }
 
 .contact h2 {
     font-weight: normal;
+    padding: 20px 0 60px;
 }
 
 /* フッター */
@@ -177,6 +203,69 @@ a.btn--radius {
     text-align: center;
 }
 
+/* pc版でハンバーガーを表示しないためのもの */
+.sp_btn,
+.sp_nav {
+    display: none;
+}
+
 /* ここからスマホ用 */
 
-@media screen and (max-width:400px) {}
+@media screen and (max-width:1100px) {
+
+    .nav {
+        display: none;
+    }
+
+    .nav-top {
+        display: none;
+    }
+
+    /* ハンバーガー */
+
+    .sp_btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        z-index: 2;
+        color: #212121;
+    }
+
+    .sp_btn span {
+        position: relative;
+        top: 10px;
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        color: #212121;
+        background-color: #212121;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #212121;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+}
+
+@media screen and (max-width:767px) {}

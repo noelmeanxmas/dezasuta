@@ -13,6 +13,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .works_cont {
