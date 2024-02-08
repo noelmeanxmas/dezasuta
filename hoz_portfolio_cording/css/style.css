@@ -9,7 +9,6 @@
 }
 
 
-
 /* fv */
 
 .fv p {
@@ -268,4 +267,50 @@ a.btn--radius {
 
 }
 
-@media screen and (max-width:767px) {}
+@media screen and (max-width:767px) {
+
+    .about_cont {
+        display: block;
+    }
+
+    .about_cont img {
+        width: 100%;
+    }
+
+    .about_cont p {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 50px 20px;
+    }
+
+    .skill {
+        padding: 0 20px;
+        background-position: center;
+    }
+
+    .skill_cont {
+        display: block;
+        padding-bottom: 60px;
+    }
+
+    .tate {
+        width: 100%;
+    }
+
+    .tate:last-child {
+        margin-left: 0;
+    }
+
+    .contact_item {
+        display: block;
+    }
+
+    .contact_item label {
+        display: block;
+    }
+
+    .contact_item input {
+        box-sizing: border-box;
+    }
+
+}

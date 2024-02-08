@@ -4,36 +4,42 @@
     position: static;
 }
 
-.works_disp h2 {
-    text-align: center;
-    margin: 80px auto 50px;
-}
+/* ここからワークス詳細ページ */
 
-.works_wrap {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 950px;
+.works_fv {
     margin: 0 auto;
 }
 
-.works_cont {
-    width: 30%;
-    display: block;
-    margin-bottom: 50px;
+.detail h2 {
+    text-align: center;
 }
+
+.detail_desc {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.detail_item {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.midashi {
+    width: 50%;
+}
+
+.midashi_cont {
+    width: 50%;
+}
+
 
 .footer {
     background-color: #212121;
     padding: 10px 10px;
     color: #fffdf8;
     text-align: center;
-}
-
-/* ここからワークス詳細ページ */
-
-.works_fv {
-    margin: 0 auto;
 }
 
 @media screen and (max-width:767px) {

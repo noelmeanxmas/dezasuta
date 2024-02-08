@@ -15,7 +15,7 @@ ul,
 li {
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: 1.6;
     /*デフォルトの文字色、font-familyを予め当てておく*/
     color: #212121;
     font-family: "futura-pt", 'Century Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif;
